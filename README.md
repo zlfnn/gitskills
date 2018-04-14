@@ -1,6 +1,6 @@
 # todo
 
-git pull origin master  or git clone https://github.com/todo.git
+git pull origin master  or git clone https://github.com/zlfnn/todo.git
 ========
 - cnmp i
 
