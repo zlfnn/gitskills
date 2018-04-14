@@ -7,3 +7,6 @@ git pull origin master  or git clone https://github.com/zlfnn/todo.git
 - npm run dev
 
 - npm run build
+
+
+https://zlfnn.github.io/todo/dist/index.html
