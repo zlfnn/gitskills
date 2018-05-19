@@ -12,7 +12,7 @@
 
     <script type="text/javascript">
         window.onload = function(){
-             document.getElementById('#file_upload').onchange = function(){
+             document.getElementById('#file_upload').onchange=function(){
               var reader = new FileReader()
               reader.onload = function(e) {
                  document.getElementById('#img').src = e.target.result
