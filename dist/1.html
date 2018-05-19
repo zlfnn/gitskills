@@ -1,0 +1,32 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script type="text/javascript" src="http://ddl.wlylai.com/static/js/jquery-2.0.3.min.js"></script>
+</head>
+<body>
+  <form action="http://192.168.0.27:3000/upload" method="post" enctype="multipart/form-data">
+    <input type="file"   id="file_upload" accept="image/*;capture=camera" name = "file"/>
+  </form>
+    <div><img id="img" /></div>
+
+    <script type="text/javascript">
+       $(function(){
+        $("#file_upload").change(function(){;
+          var reader = new FileReader()
+          reader.onload = function(e) {
+             $("#img").attr('src', e.target.result)
+          }
+          reader.readAsDataURL(this.files[0]);
+        })
+       })
+     
+
+    </script>
+   
+
+</body>
+</html>
