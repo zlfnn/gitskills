@@ -14,15 +14,15 @@
     <div><img id="img" /></div>
 
     <script type="text/javascript">
-       $(function(){
-        $("#file_upload").change(function(){;
-          var reader = new FileReader()
-          reader.onload = function(e) {
-             $("#img").attr('src', e.target.result)
-          }
-          reader.readAsDataURL(this.files[0]);
-        })
-       })
+      window.onload = function(){
+             document.getElementById('#file_upload').onchange = function(){
+              var reader = new FileReader()
+              reader.onload = function(e) {
+                 document.getElementById('#img').src = e.target.result
+              }
+              reader.readAsDataURL(this.files[0]);
+            }
+        }
      
 
     </script>
