@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /**  320 360 400 432  480  640*/
+    @media screen and (min-width: 320px) {
+      html {
+        font-size: 32px; } }
+    @media screen and (min-width: 360px) {
+      html {
+        font-size: 36px; } }
+    @media screen and (min-width: 375px) {
+      html {
+        font-size: 37.5px; } }
+    @media screen and (min-width: 400px) {
+      html {
+        font-size: 40px; } }
+    @media screen and (min-width: 412px) {
+      html {
+        font-size: 41.2px; } }
+    @media screen and (min-width: 432px) {
+      html {
+        font-size: 43.2px; } }
+    @media screen and (min-width: 480px) {
+      html {
+        font-size: 48px; } }
+    @media screen and (min-width: 540px) {
+      html {
+        font-size: 54px; } }
+    @media screen and (min-width: 640px) {
+      html {
+        font-size: 64px; } }
+    @media screen and (min-width: 750px) {
+      html {
+        font-size: 75px; } }
+    html {
+      height: 100%;
+    }
+
+    body {
+      background: #ffa5a5;
+      background: linear-gradient(to bottom, #ffa5a5 0%, #ffd3d3 100%);
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .item {
+      width: 0.5rem;
+      height: 0.5rem;
+      background-image: url('images/xin.png');
+      background-size: 0.5rem;
+      background-repeat: no-repeat;
+      position: absolute;
+      transform-origin: -0.6rem 0;
+    }
+
+    @-webkit-keyframes donghua {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+      100% {
+        transform: translate3d(0, 2.666rem, 0) rotate(360deg);
+      }
+    }
+
+    .chest {
+      width: 6.6rem;
+      height: 6.6rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      opacity: 0;
+    }
+
+    .heart {
+      position: absolute;
+      z-index: 2;
+      background: linear-gradient(-90deg, #F50A45 0%, #d5093c 40%);
+      animation: beat 0.7s ease 0s infinite normal;
+    }
+
+    .heart.center {
+      background: linear-gradient(-45deg, #B80734 0%, #d5093c 40%);
+    }
+
+    .heart.top {
+      z-index: 3;
+    }
+
+    .side {
+      top: 1.33rem;
+      width: 2.91rem;
+      height: 2.91rem;
+      border-radius: 2.91rem;
+    }
+
+    .center {
+      width: 2.8rem;
+      height: 2.8rem;
+      bottom: 1.33rem;
+      left: 1.933rem;
+      font-size: 0;
+      text-indent: -9999px;
+    }
+
+    .left {
+      left: 0.823rem;
+    }
+
+    .right {
+      right: 0.823rem;
+    }
+
+    @keyframes beat {
+      0% {
+        transform: scale(1) rotate(225deg);
+        box-shadow: 0 0 0.5333rem #d5093c;
+      }
+
+      50% {
+        transform: scale(1.1) rotate(225deg);
+        box-shadow: 0 0 0.9333rem #d5093c;
+      }
+
+      100% {
+        transform: scale(1) rotate(225deg);
+        box-shadow: 0 0 0.5333rem #d5093c;
+      }
+    }
+    .wrap {
+      width: 6.9rem;
+      color: #fff;
+      margin: 2rem auto 0;
+      border: 1px solid pink;
+      padding: 0.4rem;
+      font-size: 0.43rem;
+      border-radius: 5px;
+      text-shadow: 0 0 10px rgb(0,0,0);
+      opacity: 0;
+    }
+    .msgbox {
+      position: fixed;
+      left: 50%;
+      margin-left: -3.8rem;
+      width: 6.9rem;
+      color: #333;
+      text-shadow: 0 0 10px rgb(255,165,165);
+      background-color: rgba(255,255,255,0.5);
+      padding: 0.4rem;
+      box-shadow:0 4px 10px rgb(248, 22, 22, 0.5);
+      z-index: 10;
+      top: 10%;
+      opacity: 0;
+      display: none;
+    }
+    .tip {
+      text-align: center;
+      font-size: 0.6rem;
+    }
+    .btn {
+      width: 2.66rem;
+      height: 0.9rem;
+      background-color: rgba(255,165,165,0.5);
+      border-radius: 5px;
+      margin: 10px auto;
+      font-size: 0.5rem;
+      line-height: 0.9rem;
+      text-align: center;
+    }
+    .btntwo {
+      text-align: center;
+    }
+    .btntwo span {
+      display: inline-block;
+      width: 2.66rem;
+      height: 0.9rem;
+      font-size: 0.5rem;
+      line-height: 0.9rem;
+      text-align: center;
+      border-radius: 5px;
+      background-color: rgba(255,165,165,0.5);
+
+    }
+    #wrapx{
+      position: fixed;
+      width:100%;
+      height:100%;
+      top: 0;
+      left 0;
+    }
+    @-webkit-keyframes donghua{
+      0%{
+        transform:translate3d(0,0,0) rotate(0deg);
+      }
+      100%{
+        transform:translate3d(0,200px,0) rotate(360deg);
+      }
+    }
+    @keyframes donghua{
+      0%{
+        transform:translate3d(0,0,0) rotate(0deg);
+      }
+      100%{
+        transform:translate3d(0,200px,0) rotate(360deg);
+      }
+    }
+    .item2{
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      margin:10px;
+      border-radius: 50%;
+      position: absolute;
+      transform-origin:-60px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='wrap' class="wrap">
+    这里有来自我心里的话语，点我的心
+  </div>
+  <div class="chest" id="chest">
+    <div class="heart left side top"></div>
+    <div class="heart center">&hearts;</div>
+    <div class="heart right side"></div>
+  </div>
+  <div id="msgbox" class="msgbox">
+    <div class="tip" id="tip">
+      做我女朋友，好吗？
+    </div>
+    <div class="btn" id="btnnext">NEXT</div>
+  </div>
+  <div id="msgbox1" class="msgbox">
+    <div class="tip" >
+      做我女朋友，好吗？
+    </div>
+    <div class="btn" id="btnnext">NEXT</div>
+  </div>
+  <div id="msgbox2" class="msgbox">
+    <div class="tip" >
+      房产证写你的名字...保大...我妈会游泳...
+    </div>
+    <div class="btn">NEXT</div>
+  </div>
+  <div id="msgbox3" class="msgbox">
+    <div class="tip" >
+      做我女朋友，好吗？
+    </div>
+    <div class="btntwo">
+        <span class="no">NO</span>
+        <span class="yes">YES</span>
+    </div>
+  </div>
+  <div id="msgbox4" class="msgbox">
+    <div class="tip" >
+      要不在考虑一下?
+    </div>
+    <div class="btn">NEXT</div>
+  </div>
+   <div id="msgbox5" class="msgbox">
+    <div class="tip" >
+
+    </div>
+  </div>
+  <div id='wrapx'></div>
+  <script src='jquery-1.11.3.min.js'></script>
+  <script>
+    $(function () {
+      var $chest = $("#chest")
+      var $wrap = $("#wrap")
+      var $msgbox1 = $('#msgbox1')
+      var $btnnext1 = $('#msgbox1').find('.btn')
+      var $msgbox2 = $('#msgbox2')
+      var $btnnext2 = $('#msgbox2').find('.btn')
+      var $msgbox3 = $('#msgbox3')
+      var $msgbox4 = $('#msgbox4')
+      var $msgbox5 = $('#msgbox5')
+      var $btnnext4 = $('#msgbox4').find('.btn')
+      var $btnno = $('#msgbox3').find('.no')
+      var $btnyes = $('#msgbox3').find('.yes')
+      var flag = false
+      var i = 0
+      var className = 'item'
+      $chest.animate({opacity: 1}, 2000, function(){
+        $wrap.animate({opacity: 1}, 1000)
+      })
+      $chest.click(function(){
+        if (flag) return
+        $wrap.animate({opacity: 0}, function(){
+          flag = true
+          $msgbox1.show()
+          $msgbox1.animate({opacity: 1}, 1000)
+        })
+      })
+      $btnnext1.click(function(){
+          $msgbox1.animate({opacity: 0}, function(){
+            $msgbox1.hide()
+            $msgbox2.show()
+            $msgbox2.animate({opacity:1}, 1000)
+          })
+      })
+      $btnnext2.click(function(){
+          $msgbox2.animate({opacity: 0}, function(){
+            $msgbox2.hide()
+            $msgbox3.show()
+            $msgbox3.animate({opacity:1}, 1000)
+          })
+      })
+      $btnno.click(function(){
+        if (i >= 2) {
+          $msgbox3.animate({opacity: 0}, function(){
+            $msgbox3.hide()
+            $msgbox5.show()
+            $msgbox5.find('.tip').text('哼, 再见')
+            $msgbox5.animate({opacity:1}, 1000, function(){
+              $chest.find('.heart').css({"animation-play-state":"paused"})
+              $('body').css({'background':'#eee'})
+              className = 'item2'
+              snow()
+             })
+          })
+        } else {
+          i++
+          if (i == 2) {
+            $msgbox4.find('.tip').text('真的不在考虑一下吗？')
+          }
+          $msgbox3.animate({opacity: 0}, function(){
+            $msgbox3.hide()
+            $msgbox4.show()
+            $msgbox4.animate({opacity:1}, 1000)
+          })
+        }
+      })
+      $btnnext4.click(function(){
+        $msgbox4.animate({opacity: 0}, function(){
+          $msgbox4.hide()
+          $msgbox3.show()
+          $msgbox3.animate({opacity:1}, 1000)
+        })
+      })
+      $btnyes.click(function(){
+        $msgbox3.animate({opacity: 0}, function(){
+          $msgbox3.hide()
+          $msgbox5.show()
+          $msgbox5.find('.tip').text('爱你，么么哒')
+          $msgbox5.animate({opacity:1}, 1000, function(){
+            snow()
+          })
+        })
+      })
+
+      var wrap=$('#wrapx');
+      var w=wrap.width();
+      var h=wrap.height();
+      function snow(){
+        for(var i=0;i<100;i++){
+          var left=Math.random()*w;
+          var top=Math.random()*h;
+          var t=Math.random()*10+1;
+          $('<div class="'+className+'"></div>').css({
+            'left':left,
+            'top':top,
+            '-webkit-animation':'donghua '+t+'s linear infinite'
+          }).appendTo(wrap);
+        }
+      }
+
+    })
+  </script>
+</body>
+
+</html>
